@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
   <title>MyStudySite</title>
@@ -8,13 +9,117 @@
 
 <body>
   <h1>My Study Site</h1>
-  <h2></h2>
-  
-  <main>
-    <h2>HTML・cssの学習</h2>
-    <P>備忘録です。</P>
+  <nav>
 
-  </main>
+  </nav>
+  <h2>目次</h2>
+<ol>
+  <li><a href="#hina">HTML雛形作成</a></li>
+  <li><a href="#table">表の作成</a></li>
+  <li><a href="#link">リンクの設定</a></li>
+</ol>
+
+  <section>
+    <h2>HTMLの備忘録</h2>
+    <h2 id="hina">○HTML雛形作成</h2>
+    <p>・VS Codeではhtml:5でTab</p>
+    <p>
+      
+      　&lt;!DOCTYPE html&gt;<br>
+      　&lt;html lang="ja"&gt;<br>
+      　&lt;head&gt;<br>
+      　　&lt;meta charset="UTF-8"&gt;<br>
+      　　&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br>
+      　　　//Internet Explorerの設置だが削除可。<br>
+      　　&lt;meta name="viewport" content="width=, initial-scale=1.0"&gt;<br>
+      　　&lt;meta name="description" content="サイトの説明を記入"&gt;<br>
+      　　　//検索エンジンに伝えるためなので丁寧に記載。<br>
+      　　 &lt;title&gt;Document&lt;/title&gt;<br>
+      　　　//ブラウザのタブや、ブックマーク時のタイトルになる。<br>
+      　　&lt;link rel="icon" href="○○○.png"&gt;<br>
+      　　　//faviconを設定する。<br>
+      　&lt;/head&gt;<br>
+        <br>
+      　&lt;body&gt;<br>
+      　&lt;/body&gt;<br>
+        <br>
+    　&lt;/html&gt;<br>
+    </p>
+
+    <h2 id="table">○表の作成</h2>
+    <ol>
+      <li>tableタグで外枠を作る。</li>
+      <li>その中に見出し部分のthead(table head)タグ、本体部分のtbody(table body)タグを作る。</li>
+      <li>必要行数のtr(talble row)を作成。</li>
+      <li>見出しをth(table header)、本体をtd(table date cell)で作成。</li>
+
+    </ol>
+    <table>
+      <thead>
+        <tr>
+          <th>順番</th>
+          <th>マークアップ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>１．</td>
+          <td>&lt;table&gt;<br>&lt;/table&gt;</td>
+        </tr>
+        <tr>
+          <td>２．</td>
+          <td>&lt;table&gt;<br>
+          　&lt;thead&gt;&lt;/thead&gt;<br>
+          　&lt;tbody&gt;&lt;/tbody&gt;<br>
+          &lt;/table&gt;</td>
+        </tr>
+        <tr>
+          <td>３．</td>
+          <td>&lt;table&gt;<br>
+            　&lt;thead&gt;&lt;tr&gt;&lt;/tr&gt;&lt;/thead&gt;<br>
+            　&lt;tbody&gt;&lt;tr&gt;&lt;/tr&gt;&lt;tr&gt;&lt;/tr&gt;&lt;/tbody&gt;<br>
+            &lt;/table&gt;</td>        
+        </tr>
+        <tr>
+          <td>４．</td>
+          <td>&lt;table&gt;<br>
+            　&lt;thead&gt;<br>
+            　　&lt;tr&gt;&lt;th&gt;年&lt;/th&gt;&lt;th&gt;項目&lt;/th&gt;&lt;/tr&gt;<br>
+            　&lt;/thead&gt;<br>
+            　&lt;tbody&gt;<br>
+            　　&lt;tr&gt;&lt;td&gt;1941&lt;/td&gt;&lt;td&gt;真珠湾攻撃&lt;/td&gt;&lt;/tr&gt;<br>
+            　　&lt;tr&gt;&lt;td&gt;1945&lt;/td&gt;&lt;td&gt;ポツダム宣言受託&lt;/td&gt;&lt;/tr&gt;<br>
+            　&lt;/tbody&gt;<br>
+          &lt;/table&gt;
+         </td>          
+        </tr>
+
+        <tr>
+          <td>５．</td>
+          <td>
+          <table>
+            <thead>
+             <tr> <th>年</th><th>項目</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1941</td><td>真珠湾攻撃</td></tr>
+              <tr></tr><td>1945</td><td>ポツダム宣言受託</td></tr>
+            </tbody>
+          </table>
+         </td>
+        </tr>
+      </tbody>
+    </table>
+  </p>
+   
+    <a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Tables/Basics" target ="_blank">MDN 表の基本</a>
+  
+  <h2 id="link">○リンクの設定</h2>
+  <p>・a(anchor)タグを使い。href(hypertext reference)属性を追加。新規タブで開くにはtarget="_blank"と記入。</p> 
+  <p>・ページ内リンクは、リンク先にid属性を設定後に、href属性に＃id名。</p>
+  
+  
+  </section>
 </body>
 
 </html>
