@@ -12,39 +12,43 @@
   <nav>
 
   </nav>
-  <h2>目次</h2>
+  <p>HTMLの備忘録</p>
+
+  <h2>--------目次--------</h2>
 <ol>
   <li><a href="#hina">HTML雛形作成</a></li>
   <li><a href="#table">表の作成</a></li>
   <li><a href="#link">リンクの設定</a></li>
+  <li><a href="#character reference">文字参照</a></li>
+  <li><a href="#form tags">入力部品</a></li>
+  <li><a href="#links">リンク集</a></li>
+  
 </ol>
-
+  <h2>---------------------</h2>
   <section>
-    <h2>HTMLの備忘録</h2>
     <h2 id="hina">○HTML雛形作成</h2>
     <p>・VS Codeではhtml:5でTab</p>
-    <p>
+    <p><code>
       
+
       　&lt;!DOCTYPE html&gt;<br>
       　&lt;html lang="ja"&gt;<br>
       　&lt;head&gt;<br>
       　　&lt;meta charset="UTF-8"&gt;<br>
       　　&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br>
-      　　　//Internet Explorerの設置だが削除可。<br>
+      　　　//Internet Explorerの設定だが削除可。<br>
       　　&lt;meta name="viewport" content="width=, initial-scale=1.0"&gt;<br>
       　　&lt;meta name="description" content="サイトの説明を記入"&gt;<br>
-      　　　//検索エンジンに伝えるためなので丁寧に記載。<br>
+      　　　//検索エンジン用なので丁寧に記載。<br>
       　　 &lt;title&gt;Document&lt;/title&gt;<br>
       　　　//ブラウザのタブや、ブックマーク時のタイトルになる。<br>
       　　&lt;link rel="icon" href="○○○.png"&gt;<br>
       　　　//faviconを設定する。<br>
       　&lt;/head&gt;<br>
-        <br>
-      　&lt;body&gt;<br>
+      　&lt;body&gt;<br><br>
       　&lt;/body&gt;<br>
-        <br>
-    　&lt;/html&gt;<br>
-    </p>
+      　&lt;/html&gt;<br>
+    </code></p>
 
     <h2 id="table">○表の作成</h2>
     <ol>
@@ -64,7 +68,7 @@
       <tbody>
         <tr>
           <td>１．</td>
-          <td>&lt;table&gt;<br>&lt;/table&gt;</td>
+          <code><td>&lt;table&gt;<br>&lt;/table&gt;</td>
         </tr>
         <tr>
           <td>２．</td>
@@ -110,7 +114,7 @@
         </tr>
       </tbody>
     </table>
-  </p>
+  </p></code>
    
     <a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Tables/Basics" target ="_blank">MDN 表の基本</a>
   
@@ -118,8 +122,159 @@
   <p>・a(anchor)タグを使い。href(hypertext reference)属性を追加。新規タブで開くにはtarget="_blank"と記入。</p> 
   <p>・ページ内リンクは、リンク先にid属性を設定後に、href属性に＃id名。</p>
   
-  
+  <h2 id="character reference">○文字参照</h2>
+  <p>・<code>&lt;h2&gt;</code>を表示するには、文字参照を使用する。小なり記号(&lt;)は &(アンパサンド)+lt(less than)+;（セミコロン）で表し、大なり記号(&gt;)は &+gt(greater than)+;で表す。</p>
+  <p>・コードを表現する際は code タグを使用する。</p>
+  <section>
+
+ 
+  <h2 id="form tags">○入力部品</h2>
+  <form>
+    <div>
+      <h3>input</h3>
+      <label>
+        氏名
+        <input type="text" placeholder="例:徳川家康">
+      </label>
+      <p>・type属性text。単一行テキストボックス。placeholder使用。</p>
+      <p>・placeholderは使用しないほうがよい。他の方法ほど有益でなく、コンテンツに予期しない技術的な問題を引き起こす可能性がありとのこと。</p>
+      <div>
+       <label>
+          氏名
+         <input type="text" value="織田信長">
+       </label>
+       <p>・type属性text。初期値をvalue属性で記入可能。</p>
+      </div>
+      <div>
+       <label>
+          パスワード
+          <input type="password" value="123456">
+       </label>
+        <p>・type属性password。初期値をvalue属性で記入可能。</p>
+      </div>
+      <div>
+        <label>
+          数量
+          <input type="number" value="777">
+        </label>
+        <p>・type属性number。初期値をvalue属性で記入可能。</p>
+      </div>
+      <div>
+        <label>
+          日付
+          <input type="date" value="2022-08-18">
+        </label>
+        <p>・type属性date。初期値をvalue属性で記入可能。形式はvalue="2022-08-18"。</p>
+      </div>
+
+      <div>
+        <h3>textarea</h3>
+        <label>
+          製品名
+          <textarea placeholder="例:プロダクツA">初期値にタブも含まれてしまう。
+          </textarea>
+        </label>
+        <p>・改行を含む複数行のテキストボックス。</p>
+        <p>・labelとテキストボックスを結び付けるには、</p>
+        <ol>
+          <li>labelの中にテキストボックスを配置。</li>
+          <li>for="id名"で関連付ける。</li>
+        </ol>
+        <p>２つの方法がある。</p>
+        <p>・placeholderで例が記入可能。ただし、規定値をセットしておくと表示が見えなくなる。</p>
+        <p>・テキストエリアに初期値を記載できるが、タブも文字に含まれてしまうので注意。</p>
+      </div>
+
+      <div>
+        <h3>チェックボックス</h3>
+        <fieldset>
+          <legend>商品名</legend>
+          <label><input type="checkbox" checked>りんご</label>
+          <label><input type="checkbox" >みかん</label>
+          <label><input type="checkbox" checked>ぶどう</label>
+        </fieldset>
+        <p>・input type = "checkbox"で作成。</p>
+        <p>・複数選択が可能。</p>
+        <P>・fieldsetで枠で囲める。legendで説明も付けられる。</P>
+        <p>・checkedで初期値複数選択可能。</p>
+      </div>
+
+
+      <div>
+        <h3>ラジオボタン</h3>
+        <fieldset>
+          <legend>満足度</legend>
+          <label><input type="radio" name="satisfaction" checked>満足</label>
+          <label><input type="radio" name="satisfaction">不満足</label>
+          <label><input type="radio" name="satisfaction">不明</label>
+        </fieldset>
+        <p>・input type = "radio" で作成。</p>
+        <p>・全てのボタンにname=""で同じ値を付けることで複数選択できなくなる。</p>
+        <p>・checkedで初期値で1つ選択可能。</p>
+      </div>
+
+      <div>
+        <h3>ドロップダウンリスト</h3>
+        <label for="">
+          種別
+          <select>
+            <option >-----商品を選んでください----</option>
+            <option >栗</option>
+            <option >梨</option>
+            <option selected>柿</option>
+            <option>桃</option>
+          </select>
+        </label>
+        <p>・optionタブをselectタブで囲って作成。</p>
+        <p>・一番上を説明文にできる。</p>
+        <p>・selectタブにsize=3を加えて3行表示初期設定等が可能。ドロップダウンリストでなくなるので、リストボックスになる。</p>
+        <p>・デフォルトは1つだけ選択可能。selectタブにmultipleを加えると複数選択可能になるが、選択方法がctrl+等になるので、チェックボックスのほうがわかり易い。
+        </p>
+        <p>・optionタブにselectedで初期設定可能。ただし、変更後、ブラウザで更新しても変更されなかった。一度タブを閉じればOK。</p>
+      </div>
+
+
+
+        <h3>ボタン</h3>
+        <button>ボタン</button>
+        <input type="submit" value="ボタン" disabled>
+        <ol><code>
+    <li>&lt;button&gt;ボタン&lt;button&gt;</li>
+    <li>&lt;input type="submit" value="ボタン"&gt;</li>
+  </ol></code>
+          <p>とする方法がある。</p>
+          <p>・&lt;button&gt;を使用すれば、画像も使用可能。</p>
+          <p>・disabledで無効化できる。</p>
+      </div>
+  </form>
+</body>
+</section>
+
+
+
+
+
+
+  <h2 id="links">○リンク集</h2>
+<p>MDN</p>
+<p>・「許可されている内容」で入れられる要素か確認する。例えば、h1は記述コンテンツのみ許可なので、divタグは入れることはできない。(試しで入れてみると改行されてしまった。)
+
+</p>
+<div>
+  <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/Heading_Elements" target ="_blank"> &lt;h1&gt;-&lt;h6&gt;HTMLの見出し要素</a>
+</div>
+
+<div>
+  <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/input" target="_blank">&lt;input&gt;入力欄 (フォーム入力) 要素</a>
+</div>
+
+<div>
+  <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/input/radio" target="_blank">ラジオボタン</a>
+</div>
+
+
   </section>
+
 </body>
 
 </html>
