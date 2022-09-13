@@ -9,28 +9,40 @@
 
 <body>
   <h1>My Study Site</h1>
-  <nav>
-
-  </nav>
+  <nav>  </nav>
   <p>HTMLの備忘録</p>
 
 
 <!-- 目次 -->
 <section>
 <h2>--------目次--------</h2>
-<ol>
-  <li><a href="#hina">HTML雛形作成</a></li>
-  <li><a href="#table">表の作成</a></li>
-  <li><a href="#link">リンクの設定</a></li>
-  <li><a href="#character reference">文字参照</a></li>
-  <li><a href="#form tags">入力部品</a></li>
-  <li><a href="#JSB">JavaSript基礎</a></li>
-  <li><a href="#seiki">正規表現の基礎</a></li>
+  <ol>
+    <li><a href="#hina">HTML雛形作成</a></li>
+    <li><a href="#table">表の作成</a></li>
+    <li><a href="#link">リンクの設定</a></li>
+    <li><a href="#character reference">文字参照</a></li>
+    <li><a href="#form tags">入力部品</a></li>
+    <li><a href="#JSB">JavaSript基礎</a></li>
+    <ul>
+      <li><a href="#JSB_arrangement01">配列</a></li>
+      <li><a href="#JSB_arrangement02">配列要素の変更</a></li>
+      <li><a href="#JSB_object01">オブジェクト</a></li>
+      <li><a href="#JSB_character01">文字列操作</a></li>
+      <li><a href="#JSB_number01">数値の操作</a></li>
+      <li><a href="#JSB_date01">現在日時</a></li>
+      <li><a href="#JSB_alert01">アラート alert()</a></li>
+      <li><a href="#JSB_setInterval01">タイマー機能 setInterval()</a></li>
+      <li><a href="#JSB_setTimeout01">タイマー機能 setTimeout()</a></li>
+      <li><a href="#JSB_try01">例外処理</a></li>
+      <li><a href="#JSB_class01">クラスとインスタンス</a></li>
+    </ul>
 
-  <li><a href="#links">リンク集</a></li>
-  
-</ol>
-<h2>---------------------</h2>
+    <li><a href="#JSD">JavaScript DOMの基礎</li>
+    <li><a href="#seiki">正規表現の基礎</a></li>
+
+    <li><a href="#links">リンク集</a></li>
+  </ol>
+  <h2>---------------------</h2>
 </section>
 
 <!-- HTML雛形作成 -->
@@ -271,13 +283,13 @@
 <!-- JavaSript基礎 -->
 <section>
     <h2 id="JSB">○JavaScript 基礎</h2>
-    <h3>配列の基礎</h3>
+    <h3 id="JSB_arrangement01">配列の基礎</h3>
     <p>・配列を定数で作成する場合</p>
-    <p>　　const myData = [8, 9, 4];</p>
-    <p>　　　→　8,9,4</p>
+    <p>const myData = [8, 9, 4];</p>
+    <p>→　8,9,4</p>
     <p>・配列の変更</p>
-    <p>　　myData[2] =5</p>
-    <p>　　　→　8,9,5</p>
+    <p>myData[2] =5</p>
+    <p>→　8,9,5</p>
     <p>・インデックスは0番目から始まる。</p>
     <p>・constでも配列の要素への代入はできる。</p>
     <p>・要素数の確認</p>
@@ -291,7 +303,7 @@
     <p>　　for (let i = 0; i < myData.length; i++){<br>
     　　console.log(`myData ${i}:${myData[i]}`);<br>
     　　}</p>
-    <h3>配列要素の変更</h3>
+    <h3 id="JSB_arrangement02">配列要素の変更</h3>
     <p>・unshift:先頭に要素を追加。</p>
     <p>　　const myData = [8, 9];　→myData.unshift(1,2);　→1,2,8,9</p>
     <p>・push:末尾に要素を追加。</p>
@@ -358,7 +370,7 @@
     </p>
     <p>　　※配列の要素のうち条件に合うものだけを抽出して別の配列として取得する。</p>
 
-    <p>・オブジェクト</p>
+    <h3 id="JSB_object01">・オブジェクト</h3>
     <p>
     　　オブジェクトとは関連のあるデータと機能の集合です。<br>
     　(機能はたいていは変数と関数で構成されており、オブジェクトの中では<br>
@@ -458,7 +470,7 @@
     　　console.log(x);//x=[7,9]<br>
     　　console.log(y);}//y=[3,9]<br>
     </p>
-    <h3>・文字列操作</h3>
+    <h3 id="JSB_character01">・文字列操作</h3>
     <p>
     　　const myData = 'Hello World!';<br>
     ・文字数取得<br>
@@ -486,7 +498,7 @@
     　　　　console.log(minute); 　　→30<br>
     　　　　console.log(second); 　　→22<br>
     </p>
-    <h3>数値の操作</h3>
+    <h3 id="JSB_number01">数値の操作</h3>
     　　　 const myDatas = [1,5,7];<br>
     ・合計<br>
     　　　let sum = 0;<br>
@@ -513,7 +525,7 @@
     　　　console.log(Math.floor(Math.random() * 6) + 1);<br><br>
     　　×console.log(Math.floor(Math.random() * 7));<br>
     　　　→これだと0が生成されるのでサイコロの目にならない。</p>
-    <h3>・現在日時</h3>
+    <h3 id="JSB_date01">現在日時</h3>
     <p>
     　　  const d = new Date();//現在日時<br>
     　　  console.log(d);  //Date Sun Aug 21...<br>
@@ -554,7 +566,7 @@
     　　 d.setDate(d.getDate()+3);//3日後　Mon Jul 04 2022 10:20:30 <br>
     　　 console.log(d);<br>
     </P>  
-    <h3>アラート　alert()</h3>
+    <h3 id="JSB_alert01">アラート　alert()</h3>
     <p>
       　alert('警告します！');
     </p>
@@ -572,7 +584,7 @@
       　　チェックを入れると更新してもポップアップが表示されなくなる。<br>
       　　これを元に戻すには、タブをいったん削除する。
     </p>
-    <h3>・タイマー機能　setInterval()</h3>
+    <h3 id="JSB_setInterval01">タイマー機能　setInterval()</h3>
     <p>
     　　let i =0 　　　//カウンター変数<br>
     
@@ -597,7 +609,7 @@
     　　}<br>
     　　},1000);<br>
     </p>
-    <h3>・タイマー機能　setTimeout()</h3>
+    <h3 id="JSB_setTimeout01">・タイマー機能　setTimeout()</h3>
     <p>
     　　let i = 0;<br>
     　　function myTime() {<br>
@@ -618,7 +630,7 @@
     　　　setTimeout() は処理実行後に次の処理が実行されるので、システム負荷<br>
     　　がかからないので、普通はsetTimeout()を使えばよい。</p>
 
-    <h3>・例外処理</h3>
+    <h3 id="JSB_try01">例外処理</h3>
     <p>
     　例外は、開発者が想定していなかった理由で起きるエラー。<br>
     　エラーで処理を止めたくない場合に例外処理を使う。<br>
@@ -633,69 +645,130 @@
       　　console.log('実行しました!');<br>
       <br>
     </p>
-    <h3>クラスとインスタンス</h3>
+    <h3 id="JSB_class01">クラスとインスタンス</h3>
     <p>
-    　　　オブジェクトの一部（例えばテキスト）を変更
+    オブジェクトの一部（例えばテキスト）を変更
     してテンプレートを作成した<br>
-    　　場合、テンプレートのことをクラス、クラスから作られるオブジェクトを<br>
-    　　インスタンスと呼ぶ。<br>
-    　　　クラスは、class のあとに任意のクラス名（慣習的に大文字からが多い）を付<br>
-    　　け、プロパティをconstructor()というメソッドで初期化する。<br>
-    　　クラス内ではthisというキーワードを使用する。<br>
-    　　テキスト等は、constructorに引数で渡す。<br>
-    　　クラス内のメソッドにアロー関数を定義することはできない。 <br>
-    　　　インスタンスは、new + クラス名（）で（）内に埋め込みたい値。<br>
+    場合、テンプレートのことをクラス、クラスから作られるオブジェクトを<br>
+    インスタンスと呼ぶ。<br>
+    クラスは、class のあとに任意のクラス名（慣習的に大文字からが多い）を付<br>
+    け、プロパティをconstructor()というメソッドで初期化する。<br>
+    クラス内ではthisというキーワードを使用する。<br>
+    テキスト等は、constructorに引数で渡す。<br>
+    クラス内のメソッドにアロー関数を定義することはできない。 <br>
+    インスタンスは、new + クラス名（）で（）内に埋め込みたい値。<br>
     </p>
     <p>【例】クラスとインスタンス作成</p>
     <p>
-    　//クラス作成<br>
-    　　class Datas {　　//クラス名は大文字始まり<br>
-    　　　constructor(text){　　//(text)<br>
-    　　　　this.text= text;　　　//=textにする<br>
-    　　　　this.myCount=0;<br>
-    　　　}<br>
-    　　　　　　　　　　　　　　//一行空ける<br>
-    　　　data(){<br>
-    　　　console.log(`${this.text} -> Good=${this.myCount}`)<br>
-    　　}<br>
-    　}<br>
-    　//インスタンス作成<br>
-    　　const datas = [<br>
-    　　　new Datas('明日は雨みたいですね。'),<br>
-    　　　new Datas('台風接近中です。'),<br>
-    　　]　　　//配列にするのは数が多くなったときのため<br>
-    <br>
-    　　datas[0].data();<br>
-    　　datas[1].data();<br>
-    </p>
+  //クラス作成<br>
+    class Datas {          //クラス名は大文字始まり<br>
+      constructor(text){     //(text)<br>
+      this.text= text;       //=textにする<br>
+        this.myCount=0;<br>
+      }<br>
+                //一行空ける<br>
+    data(){<br>
+       console.log(`${this.text} -> ${this.myCount}count`)<br>
+    }<br>
+    count() {
+      this.myCount++;  //カウントを増やす<br>
+      this.data()<br>
+     }<br>
+    }<br>
+   </p>
 
-    <p>・クラスの継承</p>
+    <p>クラスの継承</p>
     <p>
     　子クラスを作成するには、extends 親クラス名とする。親クラスと共通のコードは削除する。<br>
     　thisを使うにはコンストラクターに続けてsuper()と記載。テキストを渡しているときは、super(text);とする。メソッドもsuper.で継承できる。メソッドは引数を取らない。<br>
-    　　//子クラス<br>
-    　　class Newdatas extends Datas {<br>
-    　　constructor(text,company) {<br>
-    　　　super(text);<br>
-    　　　this.company = company;<br>
-    　　}<br>
-    　　  <br>
-    　　data() {<br>
-    　　　super.data();<br>
-    　　　console.log(`提供： ${this.company}`)<br>
-    　　　}<br>
-    　　 }<br>
-    　　//インスタンス<br>
-    　　const datas = [<br>
-    　　　new Datas('明日は雨みたいですね。'),<br>
-    　　　new Datas('台風接近中です。'),<br>
-    　　　new Newdatas('大雨の予報です。','株式会社どしゃぶり'),<br>
-    　　]<br>
-    　　　datas[2].data();<br>
-    　　　datas[2].like();<br>
-    　　　datas[2].like();<br>
-    </p>
+    //子クラス<br>
+    class Newdatas extends Datas {<br>
+    constructor(text,company) {<br>
+    super(text);<br>
+    this.company = company;<br>
+    }<br>
+      <br>
+    data() {<br>
+    super.data();<br>
+    console.log(`提供： ${this.company}`)<br>
+    }<br>
+     }<br>
+
+    //インスタンス作成<br>
+    const datas = [<br>
+    new Datas('明日は雨みたいですね。'),<br>
+    new Datas('台風接近中です。'),<br>
+    new Newdatas('大雨の予報です。','株式会社どしゃぶり'),<br>
+    ]<br>
+    datas[0].data();
+    //明日は雨みたいですね。 -> 0count
+    datas[1].data();
+    //台風接近中です。 -> 0count
+    datas[2].data();<br>
+    //大雨の予報です。 -> 0count  提供:株式会社どしゃぶり<br>
+    datas[2].count();<br>
+    //大雨の予報です。 -> 1count  提供:株式会社どしゃぶり<br>
+    datas[2].count();<br>
+    //大雨の予報です。 -> 2count  提供:株式会社どしゃぶり<br>
+    // datas[2].myCount++;のように記載してはいけない。
+  </p>
 </section>
+
+<!-- JavaSript DOMの基礎 -->
+<section>
+  <h2 id="JSD">○JavaScript DOMの基礎</h2>
+  <h3>DOM(Document Object Model)とは</h3>
+  <ul>
+    <li>HTMLを読み込むとブラウザ内部にDOM構造が作られ、ページが描画される。</li>
+    <li>JavaScriptでDOMを操作し様々な機能を作ることができる。</li>
+    <li>DOMの個々のデータはNodeと呼ばれる。</li>
+    <li>Nodeはツリー状なのでNodeツリー、DOMツリーという。</li>
+    <li>改行や空白もNodeになる。</li>
+    <li>HTML要素を表すNodeは要素Node又はElement Nodeという。</li>
+    <li>テキスト、空白や改行はText Nodeという。</li>
+    <li>親要素は、Parent Nodeという。</li>
+    <li>子要素は、Child Nodeという。</li>
+    <li>同じ階層は兄弟関係なので、Sibling Nodeという。</li>
+  </ul>
+<h3>要素の操作</h3>
+  <p>文書内から特定の要素を取得するには、記載例。
+    <ul>
+      <li>document.querySelector('h1').textContent='変更する文字';</li>
+      <li>document.querySelector('#ID名').textContent='変更する文字';</li>
+      <!-- <li> document.getElementBy Id('ID名').textContent = '変更する文字';</li> -->
+      <li>document.querySelector('p').textContent='変更する文字';</li>
+      <li>document.querySelectorAll('p')[1].textContent='変更する文字';<br>
+        →[1]を削除しても、全て書き換えできない。全て書き換えるには次のforEach。
+      </li>
+      <li>document.querySelectorAll('p').forEach((p,index)=><br>{p.textContent=`${index}番目のp`;});
+      <li>
+        document.querySelectorAll('p').forEach((p,index) =><br>
+        {p.textContent=`${index}番目の${p.textContent}`;
+      </li>
+      </ul></li>
+ 
+     <p>ボタン操作による変更</p> 
+     <button id="target1">実行</button>
+
+    
+     
+    
+
+    
+   
+  <p>・</p>
+  <p>・</p>
+  <p>・</p>
+  <p>・</p>
+  <p>・</p>
+  <p></p>
+  <p></p>
+
+</section>
+
+
+
+
 
 <!-- 正規表現の基礎 -->
 <section>
@@ -860,6 +933,9 @@
     </div>
 </section>
 
+
+
+<script src="js/main.js"></script> 
 </body>
 
 </html>
