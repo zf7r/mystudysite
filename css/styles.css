@@ -1,16 +1,49 @@
-body p{
-  /* text-indent: 1em; */
-  margin-left: 30px; */
+body {
+  margin: 0;
+  width: 1000px;
+  background-color: rgb(251, 233, 236);
+  font-size: 24px;
 }
-
-
+header div div{
+  display: flex;
+}
+.index {
+  list-style: none;
+}
 h1{
-  font-size:24px;
-  padding-left: 16px;
+  margin: 0 0 10px 0;
+  font-size:26px;
+  padding: 12px;
   border-left:30px solid gold;
   color:#eee;
   background:chocolate;
-  
+}
+.item {
+  font-size:24px;
+}
+body p{
+  /* text-indent: 1em; */
+  margin: 0 auto;
+  /* margin-left: 30px;  */
+}
+main {
+  margin-left: 10px;
+}
+.nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.nav nav {
+  background-color: rgb(245, 219, 200);
+  border: 1px solid chocolate;
+  border-radius: 10px;
+  color:#eee;
+  padding:5px 10px;
+  font-size: 18px;
+}
+.nav nav a {
+  text-decoration:none;
 }
 
 table,h2 table,
@@ -25,5 +58,159 @@ thead,tfoot{
 
 code{
   font-size: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.pol {    /* parenthesisで丸括弧の意味 */
+  margin-left: -10px;
+  list-style: none;
+}
+.pol li{
+  counter-increment: my-counter;
+}
+.pol li::before {
+  width: 50px;
+  margin-left: -50px;
+  content: "(" counter(my-counter) ") ";
+  display: inline-block;
+}
+.p00501 {
+  display: flex;
+  gap: 60px;
+}
+.p00501ol {
+  list-style: none;
+}
+.p00501ol li {
+  width:500px;
+  counter-increment: my-counter;
+  background-color: aquamarine;
+}
+.p00501ol li::before {
+  content: "【" counter(my-counter) "】 ";
+  background-color: yellow;
+}
+.p00501ol2 {
+  margin-left: -20px;
+  list-style: none;
+}
+.p00501ol2 li {
+  width:500px;
+  counter-increment: my-counter;
+  background-color: aquamarine;
+}
+.p00501ol2 li::before {
+  content: "【" counter(my-counter) "】 ";
+  width: 60px;
+  margin-left: -80px;
+  display: inline-block;
+  background-color: yellow;
+  padding-right: 20px;
+}
+
+
+
+/* page005 の Ready-made Counter Style --------------------------------------*/
+  @counter-style hiragana {
+    system: alphabetic;
+    symbols: '\3042' '\3044' '\3046' '\3048' '\304A' '\304B' '\304D' '\304F' '\3051' '\3053' '\3055' '\3057' '\3059' '\305B' '\305D' '\305F' '\3061' '\3064' '\3066' '\3068' '\306A' '\306B' '\306C' '\306D' '\306E' '\306F' '\3072' '\3075' '\3078' '\307B' '\307E' '\307F' '\3080' '\3081' '\3082' '\3084' '\3086' '\3088' '\3089' '\308A' '\308B' '\308C' '\308D' '\308F' '\3090' '\3091' '\3092' '\3093';
+    /* symbols: あ い う え お か き く け こ さ し す せ そ た ち つ て と な に ぬ ね の は ひ ふ へ ほ ま み む め も や ゆ よ ら り る れ ろ わ ゐ ゑ を ん; */
+    suffix: '、';
+  }
+  @counter-style hiragana-iroha {
+    system: alphabetic;
+    symbols: '\3044' '\308D' '\306F' '\306B' '\307B' '\3078' '\3068' '\3061' '\308A' '\306C' '\308B' '\3092' '\308F' '\304B' '\3088' '\305F' '\308C' '\305D' '\3064' '\306D' '\306A' '\3089' '\3080' '\3046' '\3090' '\306E' '\304A' '\304F' '\3084' '\307E' '\3051' '\3075' '\3053' '\3048' '\3066' '\3042' '\3055' '\304D' '\3086' '\3081' '\307F' '\3057' '\3091' '\3072' '\3082' '\305B' '\3059';
+    /* symbols: い ろ は に ほ へ と ち り ぬ る を わ か よ た れ そ つ ね な ら む う ゐ の お く や ま け ふ こ え て あ さ き ゆ め み し ゑ ひ も せ す; */
+    suffix: '、';
+  }
+  @counter-style katakana {
+    system: alphabetic;
+    symbols: '\30A2' '\30A4' '\30A6' '\30A8' '\30AA' '\30AB' '\30AD' '\30AF' '\30B1' '\30B3' '\30B5' '\30B7' '\30B9' '\30BB' '\30BD' '\30BF' '\30C1' '\30C4' '\30C6' '\30C8' '\30CA' '\30CB' '\30CC' '\30CD' '\30CE' '\30CF' '\30D2' '\30D5' '\30D8' '\30DB' '\30DE' '\30DF' '\30E0' '\30E1' '\30E2' '\30E4' '\30E6' '\30E8' '\30E9' '\30EA' '\30EB' '\30EC' '\30ED' '\30EF' '\30F0' '\30F1' '\30F2' '\30F3';
+    /* symbols: ア イ ウ エ オ カ キ ク ケ コ サ シ ス セ ソ タ チ ツ テ ト ナ ニ ヌ ネ ノ ハ ヒ フ ヘ ホ マ ミ ム メ モ ヤ ユ ヨ ラ リ ル レ ロ ワ ヰ ヱ ヲ ン; */
+    suffix: '、';
+  }
+  @counter-style katakana-iroha {
+    system: alphabetic;
+    symbols: '\30A4' '\30ED' '\30CF' '\30CB' '\30DB' '\30D8' '\30C8' '\30C1' '\30EA' '\30CC' '\30EB' '\30F2' '\30EF' '\30AB' '\30E8' '\30BF' '\30EC' '\30BD' '\30C4' '\30CD' '\30CA' '\30E9' '\30E0' '\30A6' '\30F0' '\30CE' '\30AA' '\30AF' '\30E4' '\30DE' '\30B1' '\30D5' '\30B3' '\30A8' '\30C6' '\30A2' '\30B5' '\30AD' '\30E6' '\30E1' '\30DF' '\30B7' '\30F1' '\30D2' '\30E2' '\30BB' '\30B9';
+    /* symbols: イ ロ ハ ニ ホ ヘ ト チ リ ヌ ル ヲ ワ カ ヨ タ レ ソ ツ ネ ナ ラ ム ウ ヰ ノ オ ク ヤ マ ケ フ コ エ テ ア サ キ ユ メ ミ シ ヱ ヒ モ セ ス; */
+    suffix: '、';
+  }
+
+  @counter-style circled-katakana {
+    system: fixed;
+    symbols: '\32D0' '\32D1' '\32D2' '\32D3' '\32D4' '\32D5' '\32D6' '\32D7' '\32D8' '\32D9' '\32DA' '\32DB' '\32DC' '\32DD' '\32DE' '\32DF' '\32E0' '\32E1' '\32E2' '\32E3' '\32E4' '\32E5' '\32E6' '\32E7' '\32E8' '\32E9' '\32EA' '\32EB' '\32EC' '\32ED' '\32EE' '\32EF' '\32F0' '\32F1' '\32F2' '\32F3' '\32F4' '\32F5' '\32F6' '\32F7' '\32F8' '\32F9' '\32FA' '\32FB' '\32FC' '\32FD' '\32FE';
+    /* symbols: ㋐ ㋑ ㋒ ㋓ ㋔ ㋕ ㋖ ㋗ ㋘ ㋙ ㋚ ㋛ ㋜ ㋝ ㋞ ㋟ ㋠ ㋡ ㋢ ㋣ ㋤ ㋥ ㋦ ㋧ ㋨ ㋩ ㋪ ㋫ ㋬ ㋭ ㋮ ㋯ ㋰ ㋱ ㋲ ㋳ ㋴ ㋵ ㋶ ㋷ ㋸ ㋹ ㋺ ㋻ ㋼ ㋽ ㋾; */
+    suffix: ' ';
+  }
+  
+  @counter-style japanese-informal {
+    system: additive;
+    range: -9999 9999;
+    additive-symbols: 9000 \4E5D\5343, 8000 \516B\5343, 7000 \4E03\5343, 6000 \516D\5343, 5000 \4E94\5343, 4000 \56DB\5343, 3000 \4E09\5343, 2000 \4E8C\5343, 1000 \5343, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \4E09\767E, 200 \4E8C\767E, 100 \767E, 90 \4E5D\5341, 80 \516B\5341, 70 \4E03\5341, 60 \516D\5341, 50 \4E94\5341, 40 \56DB\5341, 30 \4E09\5341, 20 \4E8C\5341, 10 \5341, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \4E09, 2 \4E8C, 1 \4E00, 0 \3007;
+    /* additive-symbols: 9000 九千, 8000 八千, 7000 七千, 6000 六千, 5000 五千, 4000 四千, 3000 三千, 2000 二千, 1000 千, 900 九百, 800 八百, 700 七百, 600 六百, 500 五百, 400 四百, 300 三百, 200 二百, 100 百, 90 九十, 80 八十, 70 七十, 60 六十, 50 五十, 40 四十, 30 三十, 20 二十, 10 十, 9 九, 8 八, 7 七, 6 六, 5 五, 4 四, 3 三, 2 二, 1 一, 0 〇; */
+    suffix: '\3001';
+    /* suffix: '、'; */
+    negative: "\30DE\30A4\30CA\30B9";
+    /* negative: マイナス; */
+    fallback: cjk-decimal;
+  }
+  
+  @counter-style japanese-formal {
+    system: additive;
+    range: -9999 9999;
+    additive-symbols: 9000 \4E5D\9621, 8000 \516B\9621, 7000 \4E03\9621, 6000 \516D\9621, 5000 \4F0D\9621, 4000 \56DB\9621, 3000 \53C2\9621, 2000 \5F10\9621, 1000 \58F1\9621, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4F0D\767E, 400 \56DB\767E, 300 \53C2\767E, 200 \5F10\767E, 100 \58F1\767E, 90 \4E5D\62FE, 80 \516B\62FE, 70 \4E03\62FE, 60 \516D\62FE, 50 \4F0D\62FE, 40 \56DB\62FE, 30 \53C2\62FE, 20 \5F10\62FE, 10 \58F1\62FE, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4F0D, 4 \56DB, 3 \53C2, 2 \5F10, 1 \58F1, 0 \96F6;
+    /* additive-symbols: 9000 九阡, 8000 八阡, 7000 七阡, 6000 六阡, 5000 伍阡, 4000 四阡, 3000 参阡, 2000 弐阡, 1000 壱阡, 900 九百, 800 八百, 700 七百, 600 六百, 500 伍百, 400 四百, 300 参百, 200 弐百, 100 壱百, 90 九拾, 80 八拾, 70 七拾, 60 六拾, 50 伍拾, 40 四拾, 30 参拾, 20 弐拾, 10 壱拾, 9 九, 8 八, 7 七, 6 六, 5 伍, 4 四, 3 参, 2 弐, 1 壱, 0 零; */
+    suffix: '\3001';
+    /* suffix: 、; */
+    negative: "\30DE\30A4\30CA\30B9";
+    /* negative: マイナス; */
+    fallback: cjk-decimal;
+  }
+  @counter-style circled-decimal {
+    system: fixed 0;
+    symbols: '\24EA' '\2460' '\2461' '\2462' '\2463' '\2464' '\2465' '\2466' '\2467' '\2468' '\2469' '\246A' '\246B' '\246C' '\246D' '\246E' '\246F' '\2470' '\2471' '\2472' '\2473' '\3251' '\3252' '\3253' '\3254' '\3255' '\3256' '\3257' '\3258' '\3259' '\325a' '\325b' '\325c' '\325d' '\325e' '\325f' '\32b1' '\32b2' '\32b3' '\32b4' '\32b5' '\32b6' '\32b7' '\32b8' '\32b9' '\32ba' '\32bb' '\32bc' '\32bd' '\32be' '\32bf';
+    /* symbols: '⓪' '①' '②' '③' '④' '⑤' '⑥' '⑦' '⑧' '⑨' '⑩' '⑪' '⑫' '⑬' '⑭' '⑮' '⑯' '⑰' '⑱' '⑲' '⑳' '㉑' '㉒' '㉓' '㉔' '㉕' '㉖' '㉗' '㉘' '㉙' '㉚' '㉛' '㉜' '㉝' '㉞' '㉟' '㊱' '㊲' '㊳' '㊴' '㊵' '㊶' '㊷' '㊸' '㊹' '㊺' '㊻' '㊼' '㊽' '㊾' '㊿'; */
+    suffix: ' ';
+  }
+
+  @counter-style parenthesized-decimal {
+    system: fixed;
+    symbols: '\2474' '\2475' '\2476' '\2477' '\2478' '\2479' '\247A' '\247B' '\247C' '\247D' '\247E' '\247F' '\2480' '\2481' '\2482' '\2483' '\2484' '\2485' '\2486' '\2487';
+    /* symbols: '⑴' '⑵' '⑶' '⑷' '⑸' '⑹' '⑺' '⑻' '⑼' '⑽' '⑾' '⑿' '⒀' '⒁' '⒂' '⒃' '⒄' '⒅' '⒆' '⒇'; */
+    suffix: ' ';
+  }
+
+  @counter-style decimal-leading-zero {
+    system: fixed -9;
+    symbols: '\2D\30\39' '\2D\30\38' '\2D\30\37' '\2D\30\36' '\2D\30\35' '\2D\30\34' '\2D\30\33' '\2D\30\32' '\2D\30\31' '\30\30' '\30\31' '\30\32' '\30\33' '\30\34' '\30\35' '\30\36' '\30\37' '\30\38' '\30\39';
+    /* symbols: '-09' '-08' '-07' '-06' '-05' '-04' '-03' '-02' '-01' '00' '01' '02' '03' '04' '05' '06' '07' '08' '09'; */
+  }
+
+  @counter-style filled-circled-decimal {
+    system: fixed;
+    symbols: '\2776' '\2777' '\2778' '\2779' '\277a' '\277b' '\277c' '\277d' '\277e' '\277f' '\24EB' '\24EC' '\24ED' '\24EE' '\24EF' '\24F0' '\24F1' '\24F2' '\24F3' '\24F4';
+    /* symbols: '❶' '❷' '❸' '❹' '❺' '❻' '❼' '❽' '❾' '❿' '⓫' '⓬' '⓭' '⓮' '⓯' '⓰' '⓱' '⓲' '⓳' '⓴'; */
+    suffix: ' ';
+  }
+  
+  @counter-style double-circled-decimal {
+    system: fixed;
+    symbols: '\24F5' '\24F6' '\24F7' '\24F8' '\24F9' '\24FA' '\24FB' '\24FC' '\24FD' '\24FE';
+    /* symbols: '⓵' '⓶' '⓷' '⓸' '⓹' '⓺' '⓻' '⓼' '⓽' '⓾'; */
+    suffix: ' ';
+  }
+  
+  @counter-style my-style1 {
+    system: fixed;
+    symbols: '\2680' '\2681' '\2682' '\2683' '\2684' '\2685' ;
+    /* symbols: '⚀' '⚁' '⚂' '⚃' '⚄' '⚅' ; */
+    suffix: '  ';
+  }
+
+  @counter-style my-style2 {
+    system: fixed;
+    symbols: '\2673' '\2674' '\2675' '\2676' '\2677' '\2678' ;
+    /* symbols: '♳' '♴' '♵' '♶' '♷' '♸' '♹'; */
+    suffix: ' - ';
+  }
+  

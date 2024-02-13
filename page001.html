@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Study Site Github Pages</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<header>
+  <h1>My Study Site</h1>
+  <div class="nav">
+    <nav><a href="index.html">Index</a></nav>
+    <nav><a href="page001.html">Github Pages</a></nav>
+    <nav><a href="page002.html">HTML</a></nav>
+    <nav><a href="page003.html">JavaScript</a></nav>
+    <nav><a href="page004.html">正規表現</a></nav>
+    <nav><a href="page005.html">追加予定</a></nav>
+    <nav><a href="page006.html">追加予定</a></nav>
+    <nav><a href="page007.html">追加予定</a></nav>
+  </div>
+</header>
+<main>
+<details open><summary class="item">01 Github Pages でサイト公開</summary>
+    <ol >
+      <li class="bold">GitHub.comでリポジトリを作成 </li>
+        <ol class="pol">
+          <li>github.com/new にアクセス 又は Home → Top Repositories の New </li>
+          <li>リポジトリ名入力</li>
+          <li>他の項目は、デフォルトで可</li>
+          <li>左上にリポジトリが出ればOK</li>
+        </ol><br>
+        <li class="bold">リポジトリにアップロード </li>
+        <ol class="pol">
+          <li>Quick setup の 3行目の uploading an existing file をクリック</li>
+          <li>ファイルをドラッグ＆ドロップ 又は choose your files でファイルを選択<br>フォルダごと選択しないこと</li>
+          <li>Drag additional ... の下に ファイルが表示されればOK</li>
+          <li>Commit changes のボタンをクリック</li>
+        </ol><br>
+        <li class="bold">サイトの公開設定 </li>
+        <ol class="pol">
+          <li>リポジトリの Settings タブをクリック</li>
+          <li>サイドバーの Pages をクリック</li>
+          <li>Branch で main /(root) として Save</li>
+          <li>進捗確認は、上にある Actions タブ（サイドバーのActionsではない）→<br> pages build and deployment をクリック→<br>
+          Status Success になれば OK→<br>
+          Settings タブ → Pages クリックで戻る</li>
+          <li>Visit site をクリックでサイト確認できる</li>
+        </ol><br>
+        <li class="bold">編集(=再アップロード)の手順</li>
+        <ol class="pol">
+          <li>リポジトリの Code タブをクリック<br>
+          (緑のCodeボタンではない)
+          </li>
+          <li>+ボタンをクリック →<br>
+          Upload files をクリック<br>
+          (Upload files via upload ではない)
+          </li>
+          <li>以下は、2のアップロードの(2)からと同じ</li>
+        </ol><br>
+        <li class="bold">公開の一時停止</li>
+        <ol class="pol">
+          <li>リポジトリ→Settings タブ→Pages→<br>
+            三点メニューから Unpublish site をクリック</li>
+          <li>サイトを再読み込みすると404エラーになる</li>
+        </ol><br>
+        <li class="bold">一時停止からの再度公開</li>
+        <ol class="pol">
+          <li>リポジトリ→Actionタブ→<br>
+            一番上のpages build and deployment をクリック</li>
+          <li>右上に表示される Re-run all jobs をクリック</li>
+          <li>別ウィンドウが開くので、 Re-run jobs をクリック</li>
+          <li>Status が Sucsess になるまで待つ。</li>
+          <li>リロードするとサイトが復活している</li>
+        </ol><br>
+        <li class="bold">リポジトリ削除</li>
+        <ol class="pol">
+          <li>リポジトリ→Settings タブをクリック→<br>
+            一番下の Delete this repository をクリック</li>
+          <li>別ウィンドウで、I want to delete this repository をクリック</li>
+          <li>警告文が出て、To Confirm, type "ユーザー名/リポジトリ名"とあるので指示どおりタイプ</li>
+          <li>Delete this repository をクリック</li>
+          <li>リポジトリが削除される</li>
+        </ol><br>
+      </ol>
+</details>
+
+
+
+
+</main>
+<script src="js/main.js"></script> 
+</body>
+
+</html>

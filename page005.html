@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>MyStudySite 05 CSS</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<header>
+  <h1>My Study Site</h1>
+  <div>
+    <div class="nav">
+      <nav><a href="index.html">Index</a></nav>
+      <nav><a href="page001.html">01 Github Pages</a></nav>
+      <nav><a href="page002.html">02 HTML</a></nav>
+      <nav><a href="page003.html">03 JavaScript</a></nav>
+    </div>
+    <div class="nav">
+      <nav><a href="page004.html">04 正規表現</a></nav>
+      <nav><a href="page005.html">05 CSS</a></nav>
+      <nav><a href="page006.html">06 追加予定</a></nav>
+      <nav><a href="page007.html">07 追加予定</a></nav>
+    </div>
+  </div>
+</header>
+
+<main>
+<h2>05 CSS</h2>
+<details><summary id="p00501">01 &lt;ol> で括弧数字を使うには?</summary>
+<ol>
+  <li>&lt;ol>は順序付きリスト要素</li>
+  <li>規定値は1. 2. 3.…</li>
+  <li>type="a" にすると
+    <ol type="a" class="p00501">
+      <li>type="a"</li><li>type="a"</li><li>type="a"</li>
+    </ol></li>
+  <li>type="A"にすると
+    <ol type="A" class="p00501">
+      <li>type="A"</li><li>type="A"</li><li>type="A"</li>
+    </ol></li>
+  </li>
+  <li>type="i"にすると
+    <ol type="i" class="p00501">
+      <li>type="i"</li><li>type="i"</li><li>type="i"</li>
+    </ol></li>
+  </li>
+  <li>type="I"にすると
+    <ol type="I" class="p00501">
+      <li>type="I"</li><li>type="I"</li><li>type="I"</li>
+    </ol></li>
+  </li>
+  <li>ただし、リスト番号の種類に重要性がない限りは、list-style-typeプロパティを使うように書かれている。<a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/ol" target="_blank" rel="noopener noreferrer">【参照】mdn &lt;ol>: 順序付きリスト要素</a></li>
+  <li>start="4"にすると
+    <ol start="4" class="p00501">
+      <li>このように</li><li>"4"から</li><li>始る</li>
+    </ol></li>
+  </li>
+  <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のJapanese hiraganaの例
+    <ol style="list-style: hiragana;" class="p00501">
+      <li>hiragana</li><li>hiragana</li><li>hiragana</li>
+    </ol></li>
+  <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のJapanese hiragana-irohaの例
+    <ol style="list-style: hiragana-iroha;" class="p00501">
+      <li>hiragana-iroha</li><li>hiragana-iroha</li><li>hiragana-iroha</li>
+    </ol></li>
+  <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のJapanese katakanaの例
+    <ol style="list-style: katakana;" class="p00501">
+      <li>katakana</li><li>katakana</li><li>katakana</li>
+    </ol></li>
+  <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のJapanese katakana-irohaの例
+    <ol style="list-style: katakana-iroha;" class="p00501">
+      <li>katakana-iroha</li><li>katakana-iroha</li><li>katakana-iroha</li>
+    </ol></li>
+  <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のJapanese circled-katakanaの例
+    <ol style="list-style: circled-katakana;" class="p00501">
+      <li>circled-katakana</li><li>circled-katakana</li><li>circled-katakana</li>
+    </ol></li>
+  <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のJapanese japanese-informalの例
+    <ol style="list-style: japanese-informal;" class="p00501">
+      <li>japanese-informal</li><li>japanese-informal</li><li>japanese-informal</li>
+    </ol></li>
+    <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のJapanese japanese-formalの例
+      <ol style="list-style: japanese-formal;" class="p00501">
+        <li>japanese-formal</li><li>japanese-formal</li><li>japanese-formal</li>
+    </ol></li>
+    <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のcircled-decimalの例 50まである。0もあったので start="0" にした場合。
+      <ol style="list-style: circled-decimal;" start="0" class="p00501">
+        <li>circled-decimal</li><li>circled-decimal</li><li>circled-decimal</li>
+    </ol></li>
+    <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のparenthesized-decimalの例 20まである。
+      <ol style="list-style: parenthesized-decimal;"  class="p00501">
+        <li>parenthesized-decimal</li><li>parenthesized-decimal</li><li>parenthesized-decimal</li>
+    </ol></li>
+    <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のdecimal-leading-zeroの例 -9から始めることができるが、0始りにした。
+      <ol style="list-style: decimal-leading-zero;" start="0" class="p00501" >
+        <li>decimal-leading-zero</li><li>decimal-leading-zero</li><li>decimal-leading-zero</li>
+    </ol></li>
+    <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のdecimal-leading-zeroの例 -9から始めることができるが、0始りにした。
+      <ol style="list-style: decimal-leading-zero;" start="0"  class="p00501">
+        <li>decimal-leading-zero</li><li>decimal-leading-zero</li><li>decimal-leading-zero</li>
+    </ol></li>
+    <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のfilled-circled-decimalの例 20まで使える。0はない。
+      <ol style="list-style: filled-circled-decimal;"  class="p00501">
+        <li>filled-circled-decimal</li><li>filled-circled-decimal</li><li>filled-circled-decimal</li>
+    </ol></li>
+    <li>list-style-typeプロパティの<a href="https://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="noopener noreferrer">Ready-made Counter Style</a>のdouble-circled-decimalの例 20まで使える。0はない。
+      <ol style="list-style: double-circled-decimal;"  class="p00501">
+        <li>double-circled-decima</li><li>double-circled-decima</li><li>double-circled-decima</li>
+    </ol></li>
+    <li>list-style-typeプロパティのを自作してみた例1。
+      <ol style="list-style: my-style1;"  class="p00501">
+        <li>my-style1</li><li>my-style1</li><li>my-style1</li>
+      </ol>
+      <pre><code>【css】
+  @counter-style my-style1 {<span style="color:lime">   ←スタイル名は適当につけた</span> 
+    system: fixed; <span style="color:lime">   ←fixed 0 にすると0 始まり</span>
+    symbols: '\2680' '\2681' '\2682' '\2683' '\2684' '\2685' ;
+    /* symbols: '⚀' '⚁' '⚂' '⚃' '⚄' '⚅' ; */
+    suffix: '';<span style="color:lime">   ←マーカーの表現に追加するものを指定するが、</span> 
+    }          <span style="color:lime">    半角スペースだけ増やしても間は広がらない</span></code></pre>
+  </li>
+    <li>list-style-typeプロパティのを自作してみた例2。7まで。使う機会はないだろう。
+      <ol style="list-style: my-style2;"  class="p00501">
+        <li>my-style2</li><li>my-style2</li><li>my-style2</li>
+      </ol>
+      <pre><code>【css】
+  @counter-style my-style2 {<span style="color:lime">   ←スタイル名は適当につけた</span> 
+    system: fixed;
+    symbols: '\2673' '\2674' '\2675' '\2676' '\2677' '\2678' ;<span style="color:lime"> ←Unicodeで指定。自分はWindowsなので</span> 
+    /* symbols: '♳' '♴' '♵' '♶' '♷' '♸' '♹'; */<span style="color:lime">                      IMEパッドの文字一覧でコードを確認した。</span>
+    suffix: ' - ';<span style="color:lime">  ← - の前後での半角スペースは有効</span>
+  }</code></pre>
+    </li>
+  <li>@counter-style を使わずに、疑似要素を使って括弧数字にする方法。
+      <ol class="p00501ol">
+        <li>li 要素に背景色をつけて、違いがわかりやすいようにした。</li>
+        <li>こちらは位置調整しない場合。</li>
+        <li>2行になると字下げがされていない。</li>
+      </ol>
+      <li>疑似要素を使って括弧数字にした場合の位置の調整。
+        <pre><code>【css 調整なし】
+          .p00501ol {<span style="color:lime">  ←クラス名は適当 </span>
+          list-style: none;<span style="color:lime">    ← リストスタイル不使用</span>
+        }
+        .p00501ol li {
+          width:500px;<span style="color:lime">  ←2行にするため幅を狭くした</span>
+          counter-increment: my-counter;<span style="color:lime">  ←"my-counter" を 1 増加</span>
+          background-color: aquamarine;<span style="color:lime">  ←確認しやすいように背景色追加</span>
+        }
+        .p00501ol li::before {
+          content: "【" counter(my-counter) "】 ";
+        }
+      </code></pre>
+      <ol class="p00501ol2">
+        <li>margine-left: -60px;として疑似要素をli要素の外に出した。</li>
+        <li>display: inline-block;にして、疑似要素とli要素を横並びにする。</li>
+        <li>疑似要素の幅を調整した。1桁だと間が大きいが、2桁でもOK。</li>
+      </ol>
+      <pre><code>【css 調整あり】
+        .p00501ol2 {
+    margin-left: -20px;<span style="color:lime">  ←li要素を左に移動</span>
+    list-style: none;
+  }
+  .p00501ol2 li {
+    width:500px;
+    counter-increment: my-counter;
+    background-color: aquamarine;
+  }
+  .p00501ol2 li::before {
+    content: "【" counter(my-counter) "】 ";
+    width: 60px;<span style="color:lime">  ←疑似要素の幅を調整</span>
+    margin-left: -80px;<span style="color:lime">  ←li要素の左に疑似要素を移動</span>
+    display: inline-block;<span style="color:lime">  ←疑似要素とli要素を横並びに</span>
+    background-color: yellow;
+    padding-right: 20px;<span style="color:lime">  ←疑似要素右側のスペース</span>
+  }
+</code></pre>
+
+  </li>
+</ol>
+<ul>
+  <li><a href="https://developer.mozilla.org/ja/docs/Web/CSS/::before" target="_blank" rel="noopener noreferrer">【参照】mdn ::before (:before)</a></li>
+  <li><a href="https://blog.websuccess.jp/archives/2711/" target="_blank" rel="noopener noreferrer">【参照】olタグで括弧付きの数字で表示する</a></li>
+  <li>参照したサイトでは、liタグに「position:relative;」、li::beforeに「position:absolute;」と「top:0;」「left:0;」を指定して調整しているが、自分は、padding-rightで調整した。</li>
+  <li>括弧付き数字なら、Ready-made Counter Styleのparenthesized-decimalのほうが調整の手間がかからないが、数字が少し小さくなり、20以下しか使えない、丸括弧以外のアレンジが効かない。</li>
+</ul>
+
+
+
+
+
+</details>
+
+
+
+
+<script src="js/main.js"></script> 
+</body>
+
+</html>

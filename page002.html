@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Study Site Github Pages</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<header>
+  <h1>My Study Site</h1>
+  <div class="nav">
+    <nav><a href="index.html">Index</a></nav>
+    <nav><a href="page001.html">01 Github</a></nav>
+    <nav><a href="page002.html">02 HTML</a></nav>
+    <nav><a href="page003.html">03 JavaScript</a></nav>
+    <nav><a href="page004.html">04 正規表現</a></nav>
+    <nav><a href="page005.html">05 CSS</a></nav>
+    <nav><a href="page006.html">06 追加予定</a></nav>
+    <nav><a href="page007.html">07 追加予定</a></nav>
+  </div>
+</header>
+<main>
+<h3>02 HTML関係</h3>
+<details><summary class="item" id="p00201">01 HTML雛形作成</summary>
+<section>
+<p>・VS Codeではhtml:5でTab</p>
+<pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="ja"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    //Internet Explorerの設定だが削除可
+    &lt;meta name="viewport" content="width=, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="サイトの説明を記入"&gt;
+    //検索エンジン用なので丁寧に記載
+    &lt;title&gt;Document&lt;/title&gt;
+    //ブラウザのタブや、ブックマーク時のタイトルになる。
+    &lt;link rel="icon" href="○○○.png"&gt;
+    //faviconを設定する。
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+</section>
+</details>
+<br>
+<details ><summary class="item" id="p00202">02 表の作成</summary>
+<section>
+  <ol>
+    <li>tableタグで外枠を作る。</li>
+    <li>その中に見出し部分のthead(table head)タグ、本体部分のtbody(table body)タグを作る。</li>
+    <li>必要行数のtr(talble row)を作成。</li>
+    <li>見出しをth(table header)、本体をtd(table date cell)で作成。</li>
+
+  </ol>
+  <table>
+    <thead>
+      <tr>
+        <th>順番</th>
+        <th>マークアップ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><pre><code> &lt;table&gt;
+ &lt;/table&gt;</pre></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><pre><code> &lt;table&gt;
+   &lt;thead&gt;&lt;/thead&gt;
+   &lt;tbody&gt;&lt;/tbody&gt;
+ &lt;/table&gt;</code></pre></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><pre><code> &lt;table&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;&lt;tr&gt;&lt;/tr&gt;&lt;tr&gt;&lt;/tr&gt;&lt;/tbody&gt;
+ &lt;/table&gt;</code></pre></td>        
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><pre><code> &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th&gt;年&lt;/th&gt;&lt;th&gt;項目&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;1941&lt;/td&gt;&lt;td&gt;真珠湾攻撃&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;1945&lt;/td&gt;&lt;td&gt;ポツダム宣言受託&lt;/td&gt;&lt;/tr&gt;  
+    &lt;/tbody&gt;
+ &lt;/table&gt;</code></pre>
+       </td>          
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>
+        <table>
+          <thead>
+           <tr> <th>年</th><th>項目</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1941</td><td>真珠湾攻撃</td></tr>
+            <tr></tr><td>1945</td><td>ポツダム宣言受託</td></tr>
+          </tbody>
+        </table>
+       </td>
+      </tr>
+    </tbody>
+  </table>
+</p></code>
+ 
+  <a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Tables/Basics" target ="_blank">MDN 表の基本</a>
+</section>
+</details>
+<br>
+
+<details ><summary class="item" id="p00203">03 リンクの設定</summary>
+<section>
+<p>・a(anchor)タグを使い。href(hypertext reference)属性を追加。新規タブで開くにはtarget="_blank"と記入。</p> 
+<p>・ページ内リンクは、リンク先にid属性を設定後に、href属性に#id名。</p>
+<p>・サイト内のページ外リンクは、リンク先のid属性の前にhtml等をつける、&lt;a href="part10.php#id名">id先&lt;/a></p>
+</section>
+</details>
+<br>
+
+<details><summary class="item" id="p00204">04 文字参照</summary>
+<p>・<code>&lt;h2&gt;</code>を表示するには、文字参照を使用する。小なり記号(&lt;)は &(アンパサンド)+lt(less than)+;（セミコロン）で表し、大なり記号(&gt;)は &+gt(greater than)+;で表す。</p>
+<p>・コードを表現する際は code タグを使用する。</p>
+</details>
+<br>
+<details><summary class="item" id="p00205">05 入力部品</summary>
+<details><summary>0501 input</summary>
+  <div>
+    <label>
+      氏名
+      <input type="text" placeholder="例:徳川家康">
+    </label>
+    <p>・type属性text。単一行テキストボックス。placeholder使用。</p>
+    <p>・placeholderは使用しないほうがよい。他の方法ほど有益でなく、コンテンツに予期しない技術的な問題を引き起こす可能性があるらしい。</p>
+    <div>
+    <br>
+     <label>
+        氏名
+       <input type="text" value="織田信長">
+     </label>
+     <p>・type属性text。初期値をvalue属性で記入可能。</p>
+    </div>
+    <br>
+    <div>
+      <div>
+        <label>
+          パスワード
+          <input type="text" value="123456">
+        </label>
+        <p>・type属性text。初期値をvalue属性で記入可能。</p>
+        <p>・パスワードを設定するとブラウザが保存しようとするため、上の表示は、パスワードでなく type="text" にした。</p>
+      <pre><code>  &lt;label>
+    パスワード
+    &lt;input type="password" value="123456">
+  &lt;/label>
+    </code></pre>
+    </div>
+    <div>
+      <label>
+        数量
+        <input type="number" value="777">
+      </label>
+      <p>・type属性number。初期値をvalue属性で記入可能。</p>
+    </div>
+    <div><br>
+      <label>
+        日付
+        <input type="date" value="2022-08-18">
+      </label>
+      <p>・type属性date。初期値をvalue属性で記入可能。形式はvalue="2022-08-18"。</p>
+    </div>
+
+    <div>
+      <h3>textarea</h3>
+      <label>
+        製品名
+        <textarea placeholder="例:プロダクツA">初期値にタブも含まれてしまう。
+        </textarea>
+      </label>
+      <p>・改行を含む複数行のテキストボックス。</p>
+      <p>・labelとテキストボックスを結び付けるには、</p>
+      <ol>
+        <li>labelの中にテキストボックスを配置。</li>
+        <li>for="id名"で関連付ける。</li>
+      </ol>
+      <p>２つの方法がある。</p>
+      <p>・placeholderで例が記入可能。ただし、規定値をセットしておくと表示が見えなくなる。</p>
+      <p>・テキストエリアに初期値を記載できるが、タブも文字に含まれてしまうので注意。</p>
+    </div>
+</details>
+<details><summary>0502 チェックボックス</summary>
+    <div>
+      <h3></h3>
+      <fieldset>
+        <legend>商品名</legend>
+        <label><input type="checkbox" checked>りんご</label>
+        <label><input type="checkbox" >みかん</label>
+        <label><input type="checkbox" checked>ぶどう</label>
+      </fieldset>
+      <p>・input type = "checkbox"で作成。</p>
+      <p>・複数選択が可能。</p>
+      <P>・fieldsetで枠で囲める。legendで説明も付けられる。</P>
+      <p>・checkedで初期値複数選択可能。</p>
+    </div>
+</details>
+<details><summary>0503 ラジオボタン</summary>
+    <div>
+      <fieldset>
+        <legend>満足度</legend>
+        <label><input type="radio" name="satisfaction" checked>満足</label>
+        <label><input type="radio" name="satisfaction">不満足</label>
+        <label><input type="radio" name="satisfaction">不明</label>
+      </fieldset>
+      <p>・input type = "radio" で作成。</p>
+      <p>・全てのボタンにname=""で同じ値を付けることで複数選択できなくなる。</p>
+      <p>・checkedで初期値で1つ選択可能。</p>
+    </div>
+</details>
+<details><summary>0504 ドロップダウンリスト</summary>
+    <div>
+      <label for="">
+        種別
+        <select>
+          <option >-----商品を選んでください----</option>
+          <option >栗</option>
+          <option >梨</option>
+          <option selected>柿</option>
+          <option>桃</option>
+        </select>
+      </label>
+      <p>・optionタブをselectタブで囲って作成。</p>
+      <p>・一番上を説明文にできる。</p>
+      <p>・selectタブにsize=3を加えて3行表示初期設定等が可能。ドロップダウンリストでなくなるので、リストボックスになる。</p>
+      <p>・デフォルトは1つだけ選択可能。selectタブにmultipleを加えると複数選択可能になるが、選択方法がctrl+等になるので、チェックボックスのほうがわかり易い。
+      </p>
+      <p>・optionタブにselectedで初期設定可能。ただし、変更後、ブラウザで更新しても変更されなかった。一度タブを閉じればOK。</p>
+    </div>
+</details>
+
+<details><summary>0505 ボタン</summary>
+      <button>ボタン</button>
+      <input type="submit" value="ボタン" disabled>
+<ol><code>
+  <li>&lt;button&gt;ボタン&lt;button&gt;</li>
+  <li>&lt;input type="submit" value="ボタン"&gt;</li>
+</ol></code>
+        <p>とする方法がある。</p>
+        <p>・&lt;button&gt;を使用すれば、画像も使用可能。</p>
+        <p>・disabledで無効化できる。</p>
+    </div>
+</details>
+</details>
+
+
+
+</main>
+<script src="js/main.js"></script> 
+</body>
+
+</html>

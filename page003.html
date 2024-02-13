@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Study Site JavaScript</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<header>
+  <h1>My Study Site</h1>
+  <div class="nav">
+    <nav><a href="index.html">Index</a></nav>
+    <nav><a href="page001.html">01 Github</a></nav>
+    <nav><a href="page002.html">02 HTML</a></nav>
+    <nav><a href="page003.html">03 JavaScript</a></nav>
+    <nav><a href="page004.html">04 正規表現</a></nav>
+    <nav><a href="page005.html">05 CSS</a></nav>
+    <nav><a href="page006.html">06 追加予定</a></nav>
+    <nav><a href="page007.html">07 追加予定</a></nav>
+  </div>
+</header>
+<main>
+<h3 id="p003.html">03 JavaScript関係</h3>
+<details><summary class="item" id="p00301">01 配列の基礎</summary>
+  <p>・配列を定数で作成する場合</p>
+  <p>const myData = [8, 9, 4];</p>
+  <p>→8,9,4</p>
+  <p>・配列の変更</p>
+  <p>myData[2] =5</p>
+  <p>→8,9,5</p>
+  <p>・インデックスは0番目から始まる。</p>
+  <p>・constでも配列の要素への代入はできる。</p>
+  <p>・要素数の確認</p>
+  <p>console.log(myData.length);</p>
+  <p>→3</p>
+  <p>・配列のループ処理</p>
+  <p>for (let i = 0; i &lt; 3; i++){<br>
+    console.log(`myData:${myData[i]}`);<br>
+  }</p>
+  <p>・要素数増減対応のためlengthを使用し、index(=i)も表示。</p>
+  <p>for (let i = 0; i &lt; myData.length; i++){<br>
+    console.log(`myData ${i}:${myData[i]}`);<br>
+  }</p>
+</details>
+<details><summary class="item" id="p00302">02 配列要素の変更</summary>
+  <p>・unshift:先頭に要素を追加。</p>
+  <p>const myData = [8, 9];→myData.unshift(1,2);→1,2,8,9</p>
+  <p>・push:末尾に要素を追加。</p>
+  <p>const myData = [8, 9];→myData.push(6,5);→8,9,6,5</p>
+  <p>・shift:先頭から要素を削除。１つしか削除できないので()には何も入らない。</p>
+  <p>const myData = [8, 9];→myData.shift();→9</p>
+  <p>・pop:末尾から要素を１つ削除。１つしか削除できないので()には何も入らない。</p>
+  <p>const myData = [8, 9];→myData.pop();→8</p>
+  <p>・splice:途中から配列操作できる。</p>
+  <p>splice(変化開始index、削除数、追加要素)</p>
+  <p>const myData = [1, 6, 4];→myData.splice(1, 1, 2, 3);→1, 2, 3, 4</p>
+  </details>
+
+  <details><summary class="item" id="p00303">03 スプレッド構文</summary>
+  <p>【配列の結合】</p>
+  <p>const myData2 = [5,9]<br>
+  const myData1 = [1, 6, ...myData2];<br>
+  →1, 6, 5, 9
+  <p>*...（スプレッド構文）を加えないと、配列の中に配列ができてしまう。</p>
+  <p>・関数の引数</p>
+  <p>const myData = [10,20];<br>
+  function sum(a,b){console.log(a + b);
+  }<br>
+  →sum(myData)→10,20undefined（文字列となる）<br>
+  →sum(...myData)→30
+  </p>
+  <p>・分割代入</p>
+  <p>const myData = [8,9,4,7];<br>
+    const[a,b,c,d] = myData;→8,9,4,7<br>
+    const[a,b,...myData2] = myData;<br>
+    （レスト構文という）<br>
+    console.log(a);→8<br>
+    console.log(b);→9<br>
+    console.log(myData2);→Array[4,7]
+    <p>・値の交換</p>
+    <p>
+      let a =7;<br>
+      let b =9;<br>
+      [a, b]=[b, a]<br>
+      console.log(a);→9<br>
+      console.log(b);→7<br>
+    </p>
+    <p>・forEach()</p>
+    <p>const myDatas = [8,9,4];<br>
+      myDatas.forEach((myData,index)=>{<br>
+        console.log(`myData ${index}: ${myData}`)<br>
+      })<br>
+      →myData 0:8<br>
+      myData 1:9<br>
+      myData 2:4</p>
+      <p>※for文と違い要素数を気にする必要がない。</p>
+      <p>・map()</p>
+      <p>
+        const myDatas = [8,9,4,7];<br>
+        const newmyDatas =myDatas.map(myData=>myData+10);<br>
+  console.log(newmyDatas);→Array(4)[18,19,14,17]
+  </p>
+
+  <p>※配列に処理を行ったあとで結果を別の配列として取得する。</p>
+  
+  <p>・filter()</p>
+  <p>
+    const myDatas = [1,3,4,6,7,8];<br>
+    const evenmyDatas = myDatas.filter(myData => myData % 2 ===0);<br>
+    console.log(evenmyDatas);→Array(3)[4,6,8]<br>
+  </p>
+  <p>※配列の要素のうち条件に合うものだけを抽出して別の配列として取得する。</p>
+</details>
+  
+<details><summary id="p00304">04 オブジェクト</summary>
+    <p>
+      オブジェクトとは関連のあるデータと機能の集合です。<br>
+      (機能はたいていは変数と関数で構成されており、オブジェクトの中では<br>
+      それぞれプロパティとメソッドと呼ばれます。) </p>
+      
+      <p>const myObject= {<br>
+        x: 10,<br>
+        y: 20,<br>
+      };<br>
+      console.log(myObject);<br>
+      →Object{ x: 10, y: 20}<br>
+      console.log(myObject.x);<br>
+      →10<br>
+      console.log(myObject['y']);<br>
+      →20<br>
+    </p>
+    <p>※配列に名前を付けて管理できる。</p>
+  <p>※各要素（x:10やy:20）をプロパティ（メンバー）、<br>プロパティの左側（xやy）を名前（キー）と言う。<br>右側を値と言う。</p>
+  <p>・オブジェクトの変更</p>
+  <p>
+    myObject.x = 9;//値変更<br>
+    myObject['y'] = 7;//変数利用時の記法<br>
+    myObject.z = 6;//プロパティ追加<br>
+    delete myObject.y;//プロパティ削除</p>
+    <P>
+      ※順番保持していないので、index指定による追加/削除は不可。
+    </P>
+    
+    <p>・スプレッド構文によるオブジェクト操作</p>
+    <p>【例】下のpointのプロパティをmyObjectに追加</p>
+    <p>
+      const point = {       <br>
+        x:35.360625909815134,<br>
+        y:138.72735564716618,<br>
+      }<br>
+    </p>
+    
+    
+    const myObject = {<br>
+      name:'富士山',<br>
+      height:3776,<br>
+      ...point,<br>
+    }<br><br>
+    <p>【例】分割代入とレスト構文</p>
+  const{name,height,...others} = myObject;<br>
+  console.log(name);→富士山<br>
+  console.log(height);→3776<br>
+  console.log(others);→Object{x:35.…,y:138.…}<br>
+  </p>
+  <p>・オブジェクトのプロパティを列挙する</p>
+  ※直接forEach()が使えないので、Object.keys()とforEach()を使用。</p>
+  <p>
+    const myObject= {  <br>
+      x:1,<br>
+      y:8,<br>
+    };<br>
+    <br>
+    const keys = Object.keys(myObject);<br>
+    keys.forEach(key => {<br>
+      console.log(`key ${key} Value: ${myObject[key]}`);<br>
+    });<br>
+    →key x Value: 1<br>
+    key y Value: 8<br>
+    <br>
+    console.log(keys);
+    →Array["x","y"]<br>
+    ※Object.keys（）は、全てのキーを文字列の配列で取得する。
+    
+  </p>
+  <p>・配列とオブジェクトの組み合わせ</p>
+  <p>
+    const myData=[←配列<br>
+    {x:35, y:135 },←オブジェクト<br>
+    {x:35, y:136 },←オブジェクト<br>
+    {x:35, y:137 },←オブジェクト<br>
+    ];<br>
+    
+    console.log(myData);→Array(3)[{...},{...},{...}]<br>
+    console.log(myData[2].y);→137<br>
+  </p>
+  
+  <p>・配列変数代入時の挙動の違い</p>
+  <p>
+    {let x =[3,9]; //x=[3,9]<br>
+      let y =x;      //y=[3,9]<br>
+      x[0] = 7;      //x=[7,9]<br>
+      console.log(x);//x=[7,9]<br>
+      console.log(y);}//y=[7,9]<br>
+      ※配列の場合、y=xとすると、値でなく<br>
+      格納場所情報だけが作成される。<br>
+      このため、[3,9]でなく[7,9]になる。<br>
+      この場合スプレッド演算子[...]を使用すれば、<br>
+      配列が変更される。 <br>
+      {let x =[3,9]; //x=[3,9]<br>
+        let y =[...x]; //y=[3,9]<br>
+        x[0] = 7;      //x=[7,9]<br>
+        console.log(x);//x=[7,9]<br>
+        console.log(y);}//y=[3,9]<br>
+      </p>
+</details>
+<details><summary id="p00305">05 文字列操作</summary>
+      <p>
+        const myData = 'Hello World!';<br>
+        ・文字数取得<br>
+        console.log(myData.length);→12、スペースも1<br>
+        ・部分文字列取得<br>
+        定数名.substring(開始位置、終了位置);<br>
+        console.log(myData.substring(6,8));→'Wo'<br>
+        ・個々の文字の取得<br>
+        console.log(myData[6]);//→'W'<br>
+        // console.log(myData[6]='S');→read-onlyエラー<br>
+        ※データとして利用できない。<br><br>
+  ・文字列の結合 join<br>
+     const myData1 =[2022,8,21];<br>
+    console.log(myData1.join('/'));<br>
+  →2022/8/21<br>
+    console.log(myData1.join(''));<br>
+  →2022821…08にするには文字（"08"）<br>
+  <br>
+  ・文字列の分解 split<br>
+  const myData2 ='21:30:22';<br>
+  console.log(myData2.split(':'));<br>
+  →Array(3)["21","30","22"]<br>
+  const [hour,minute,second]=myData2.split(':');<br>
+  console.log(hour);   →21<br>
+  console.log(minute); →30<br>
+  console.log(second); →22<br>
+  </p>
+  </details>
+  <details><summary id="p00306">06 数値の操作</summary>
+   const myDatas = [1,5,7];<br>
+  ・合計<br>
+  let sum = 0;<br>
+  myDatas.forEach(myData => {<br>
+  sum += myData;})  <br>
+  console.log(sum);//13<br>
+  ・平均  <br>
+  const avg = sum / myDatas.length;<br>
+  console.log(avg);//4.333...<br>
+    
+  console.log(Math.floor(avg));//切り捨て4<br>
+  console.log(Math.ceil(avg));//切り上げ5<br>
+  console.log(Math.round(avg));//四捨五入4<br>
+  console.log(avg.toFixed(3));//下3桁4.333<br>
+  ・乱数生成（0以上1未満）<br>
+  console.log(Math.random());<br>
+  0, 1, 2<br>
+  Math.floor(Math.random() * 3)<br>
+  0, ..., n<br>
+  Math.floor(Math.random() * (n + 1))<br>
+  min, ..., max<br>
+  Math.floor(Math.random() * (max + 1 - min)) + min<br>
+  【例】サイコロの目を生成したい<br>
+  console.log(Math.floor(Math.random() * 6) + 1);<br><br>
+  ✕console.log(Math.floor(Math.random() * 7));<br>
+  →これだと0が生成されるのでサイコロの目にならない。</p>
+  </details>
+  <details><summary id="p00307">07 現在日時</summary>
+  <p>
+    const d = new Date();//現在日時<br>
+    console.log(d);  //Date Sun Aug 21...<br>
+    d.getFullYear(); //2022<br>
+    d.getMonth();    //0-11(Jan:0,Feb:1...)<br>
+    d.toLocaleString('en-US', {month: 'long'})//August<br>
+    d.getDate();     //1-31<br>
+    d.getDay();      //0-6 (Sun:0,Mon:1...)<br>
+    d.getHours();    //0-23<br>
+    d.getMinutes();  //0-59<br>
+    d.getSeconds();  //0-59<br>
+    d.getMilliseconds();//0-999 1ms=1/1000sec<br>
+  const youbi = ["日", "月", "火", "水", "木", "金", "土"];<br>
+   const Enday =["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];<br>
+  const d = new Date();<br>
+  console.log(`${d.getMonth() + 1}月 ${d.getDate()}日<br>
+  ${youbi[d.getDay()]} (${Enday[d.getDay()]}) 曜日`)<br><br>
+  ・getTime() を使えば、どのタイムゾーンで取得しても同じになる。<br>
+  UTC と呼ばれる協定世界時の 1970 年 01 月 01 日 00 時 00 分 00 秒<br>
+  からの経過ミリ秒。<br><br>
+  ・Intl.DateTimeFormatについて<br>
+  言語に応じたフォーマットが用意されているが、ブラウザ非対応等により、<br>
+  実際は使われていない様子。<br>
+  const date = new Date();<br>
+  const week = Intl.DateTimeFormat("ja-JP", { weekday:<br>
+  "narrow" }).format(date);<br>
+   console.log(week);}<br>
+  </p>
+  <p>
+  ・特定の日時にする場合、引数に年月日を入れる。
+  （年と月は必須）
+  </p>
+  <P>
+  const d = new Date(2022, 5);//Wed Jun 01 2022 00:00:00<br>
+  d.setHours(10, 20, 30);//Wed Jun 01 2022 10:20:30<br>
+  d.setDate(31);//Fri Jul 01 2022 10:20:30<br>
+  //6/31はないため、7/1となる。<br>
+   d.setDate(d.getDate()+3);//3日後Mon Jul 04 2022 10:20:30 <br>
+   console.log(d);<br>
+  </P> 
+  </details>
+  <details><summary id="p00308">08 アラート alert()</summary>
+  <p>
+    alert('警告します！');
+  </p>
+  <p>・確認confirm()</p>
+  <p>
+  const answer = confirm('本当に実行しますか？');<br>
+    if (answer){<br>
+     console.log('削除しました！');<br>
+     }else{<br>
+      console.log('キャンセルしました！');<br>
+  </p>
+  <p>
+    ※Fire Foxブラウザだとポップアップに<br>
+    「□このサイトでは確認ダイアログを繰り返し表示しない。」が表示され。<br>
+    チェックを入れると更新してもポップアップが表示されなくなる。<br>
+    これを元に戻すには、タブをいったん削除する。
+  </p>
+  </details>
+  <details><summary id="p00309">09 タイマー機能 setInterval()</summary>
+  <p>
+  let i =0 //カウンター変数<br>
+  
+   console.log(new Date());<br>
+   i++;<br>
+   if (i > 2) {    //3回実行<br>
+   clearInterval(intervalID);}}<br>
+  const intervalID = setInterval(myTime, 1000);<br><br>
+  ミリ秒間隔で繰り返し処理する。<br>
+  最後のmyTimeに()を付けると関数を実行した際に返ってくる値を<br>
+  setInterval()に渡すことになるが、返り値がないのでundefinedを渡す<br>
+  ことになる。また、すぐ実行されてしまい、1回の処理で停止する。<br>
+  </p>
+  <p>
+  【応用】アロー関数にして、5回helloを表示<br>
+    let i=0;<br>
+    const intervalId = setInterval(() => {<br>
+      console.log(`hello  ${i+1}回目`);<br>
+      i++;<br>
+      if(i>4){<br>
+        clearInterval(intervalId);<br>
+  }<br>
+  },1000);<br>
+  </p>
+ </details>
+ <details><summary id="p00310">10 タイマー機能setTimeout()</summary>
+  <p>
+  let i = 0;<br>
+  function myTime() {<br>
+  console.log(new Date());<br>
+  const timeoutId = setTimeout(myTime, 1000);<br>
+  i++;<br>
+  if (i > 2) {<br>
+  clearTimeout(timeoutId);<br>
+  }  <br>
+  }<br>
+  myTime();<br>
+      指定した時間後に処理を実行する。<br>
+  </p>
+  <p>・setInterval()と、setTimeout()を使った一定時間ごとの処理の違い</p>
+  <p>
+  setInterval() は、処理間隔以上に処理時間がかかる場合、処理が重なり<br>
+  システム負荷がかかる場合がある。<br>
+  setTimeout() は処理実行後に次の処理が実行されるので、システム負荷<br>
+  がかからないので、普通はsetTimeout()を使えばよい。</p>
+</details>
+<details><summary id="p00311">11 例外処理</summary>
+  <p>
+  例外は、開発者が想定していなかった理由で起きるエラー。<br>
+  エラーで処理を止めたくない場合に例外処理を使う。<br>
+  例外が発生しやすい箇所をtry{}で囲み、catch(e){console.log(e)}で<br>
+  例外が起きたときに表示する等の処理を記入する。<br><br>
+    const myName =5 //→数字はエラー<br>
+    try{<br>
+    console.log(myName.toUpperCase());<br>
+    } catch (e) {<br>
+    console.log(e);<br>
+    }<br>
+    console.log('実行しました!');<br>
+    <br>
+  </p>
+</details>
+<details><summary id="p00312">12 クラスとインスタンス</summary>
+  <p>
+  オブジェクトの一部（例えばテキスト）を変更
+  してテンプレートを作成した<br>
+  場合、テンプレートのことをクラス、クラスから作られるオブジェクトを<br>
+  インスタンスと呼ぶ。<br>
+  クラスは、class のあとに任意のクラス名（慣習的に大文字からが多い）を付<br>
+  け、プロパティをconstructor()というメソッドで初期化する。<br>
+  クラス内ではthisというキーワードを使用する。<br>
+  テキスト等は、constructorに引数で渡す。<br>
+  クラス内のメソッドにアロー関数を定義することはできない。 <br>
+  インスタンスは、new + クラス名（）で（）内に埋め込みたい値。<br>
+  </p>
+  <p>【例】クラスとインスタンス作成</p>
+  <p>
+//クラス作成<br>
+  class Datas {          //クラス名は大文字始まり<br>
+    constructor(text){     //(text)<br>
+    this.text= text;       //=textにする<br>
+      this.myCount=0;<br>
+    }<br>
+              //一行空ける<br>
+  data(){<br>
+     console.log(`${this.text} -> ${this.myCount}count`)<br>
+  }<br>
+  count() {
+    this.myCount++;  //カウントを増やす<br>
+    this.data()<br>
+   }<br>
+  }<br>
+ </p>
+
+  <p>クラスの継承</p>
+  <p>
+  子クラスを作成するには、extends 親クラス名とする。親クラスと共通のコードは削除する。<br>
+  thisを使うにはコンストラクターに続けてsuper()と記載。テキストを渡しているときは、super(text);とする。メソッドもsuper.で継承できる。メソッドは引数を取らない。<br>
+  //子クラス<br>
+  class Newdatas extends Datas {<br>
+  constructor(text,company) {<br>
+  super(text);<br>
+  this.company = company;<br>
+  }<br>
+    <br>
+  data() {<br>
+  super.data();<br>
+  console.log(`提供： ${this.company}`)<br>
+  }<br>
+   }<br>
+
+  //インスタンス作成<br>
+  const datas = [<br>
+  new Datas('明日は雨みたいですね。'),<br>
+  new Datas('台風接近中です。'),<br>
+  new Newdatas('大雨の予報です。','株式会社どしゃぶり'),<br>
+  ]<br>
+  datas[0].data();
+  //明日は雨みたいですね。 -> 0count
+  datas[1].data();
+  //台風接近中です。 -> 0count
+  datas[2].data();<br>
+  //大雨の予報です。 -> 0count  提供:株式会社どしゃぶり<br>
+  datas[2].count();<br>
+  //大雨の予報です。 -> 1count  提供:株式会社どしゃぶり<br>
+  datas[2].count();<br>
+  //大雨の予報です。 -> 2count  提供:株式会社どしゃぶり<br>
+  // datas[2].myCount++;のように記載してはいけない。
+</p>
+</section>
+</details>
+<p>【DOM操作】</p>
+<details><summary id="p00313">13 DOM(Document Object Model)とは</summary>
+<ul>
+  <li>HTMLを読み込むとブラウザ内部にDOM構造が作られ、ページが描画される。</li>
+  <li>JavaScriptでDOMを操作し様々な機能を作ることができる。</li>
+  <li>DOMの個々のデータはNodeと呼ばれる。</li>
+  <li>Nodeはツリー状なのでNodeツリー、DOMツリーという。</li>
+  <li>改行や空白もNodeになる。</li>
+  <li>HTML要素を表すNodeは要素Node又はElement Nodeという。</li>
+  <li>テキスト、空白や改行はText Nodeという。</li>
+  <li>親要素は、Parent Nodeという。</li>
+  <li>子要素は、Child Nodeという。</li>
+  <li>同じ階層は兄弟関係なので、Sibling Nodeという。</li>
+</ul>
+</details>
+<details><summary id="p00314">14 要素の操作</summary>
+<p>文書内から特定の要素を取得するには、記載例。 </p>
+  <ul>
+    <li>document.querySelector('h1').textContent='変更する文字';</li>
+    <li>document.querySelector('#ID名').textContent='変更する文字';</li>
+    <!-- <li> document.getElementBy Id('ID名').textContent = '変更する文字';</li> -->
+    <li>document.querySelector('p').textContent='変更する文字';</li>
+    <li>document.querySelectorAll('p')[1].textContent='変更する文字';<br>
+      →[1]を削除しても、全て書き換えにはならない。全て書き換えるには次のforEach。
+    </li>
+    <li>document.querySelectorAll('p').forEach((p,index)=><br>{p.textContent=`${index}番目のp`;});
+    <li>
+      document.querySelectorAll('p').forEach((p,index) =><br>
+      {p.textContent=`${index}番目の${p.textContent}`;
+    </li>
+  </ul>
+</details>
+<details><summary id="p00314">15 ボタン操作による実行</summary>
+   <p>ボタン操作による変更</p> 
+   <button id="target1">実行</button>
+   <p>作成中…</p>
+</details>
+
+  
+   
+  
+
+  
+ 
+
+
+
+
+
+
+
+
+
+</main>
+<script src="js/main.js"></script> 
+</body>
+
+</html>
